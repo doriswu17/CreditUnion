@@ -2,7 +2,7 @@ Set up in terminal
 
 cd /path/to/your/workspace
 
-git clone
+git clone https://github.com/doriswu17/CreditUnion
 
 cd HybridAppDev/DemoIonicApp
 
