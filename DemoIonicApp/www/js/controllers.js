@@ -6,12 +6,71 @@ angular.module('starter.controllers', [])
   // *** PC: Define any variables you want with $scope. $scope is essentially the global variable for
   // this particular controller and this view (html file) but in the HTML, you don't have to write $scope.name
   // to access this variable, instead you just type 'name'. Check out tab-dash.html.
-  $scope.name = "Prateek Sachdeva";
+  $scope.userInfo = {
+     firstname: '',
+     //middlename: 'middlename',
+     lastname: '',
+     mothername:'',
+     username: '',
+     password: '',
+     email: '',
+     SSN: 0,
+     state:'',
+     gender:'',
+     occ:'',
+     membership:'',
+     address:'',
+     driver: 0,
+     jfirstname: '',
+     jmiddlename: '',
+     jlastname: '',
+     jaddress: '',
+     jhomephone: '',
+     jmobilephone: '',
+     jemail:''
+  };
 
-  // *** PC: This is how you define functions and since $scope is accessible by the whole controler
-  $scope.hello = function() {
-    alert("Hello. How are you " + $scope.name);
-  }
+   $scope.createUser = function(firstname,lastname,mothername,username,password,email,state,gender,occ,address,SSN,driver,jfirstname,jmiddlename,jlastname,jaddress,jhomephone,jmobilephone,jemail) {
+     var Person = Parse.Object.extend("Person");
+     var personInfo = new Person();
+
+     personInfo.set("firstname", firstname);
+     //personInfo.set("middlename", middlename);
+     personInfo.set("lastname", lastname);
+     personInfo.set("mothername", mothername);
+     personInfo.set("username", username);
+     personInfo.set("password", password);
+     personInfo.set("email", email);
+     personInfo.set("state", state);
+     personInfo.set("gender", gender);
+     personInfo.set("occupation", occ);
+     personInfo.set("address", address);
+     personInfo.set("SSN", Number(SSN));
+     personInfo.set("driverslicense", Number(driver));
+     personInfo.set("jfirstname", jfirstname);
+     personInfo.set("jlastname", jlastname);
+     personInfo.set("jmiddlename", jmiddlename);
+     personInfo.set("jaddress", jaddress);
+     personInfo.set("jhomephone", jhomephone);
+     personInfo.set("jmobilephone", jmobilephone);
+     personInfo.set("jemail", jemail);
+
+
+
+     personInfo.save(null, {
+       success: function(personInfo) {
+  //       // Execute any logic that should take place after the object is saved.
+           alert('New object created with objectId: ');
+     },
+         error: function(personInfo, error) {
+  //   // Execute any logic that should take place if the save fails.
+  //   // error is a Parse.Error with an error code and message.
+         alert('Failed to create new object, with error code: ' + error.message);
+         }
+       });
+     };
+
+
 })
 
 .controller('ChatsCtrl', function($scope, Chats) {

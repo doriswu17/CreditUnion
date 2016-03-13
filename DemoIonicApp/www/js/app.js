@@ -13,6 +13,11 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
+
+var PARSE_APP_ID = 'isWqBy0PmQAfkpA9SjMewc3LveIbulJg21oiwB3a';
+var PARSE_JAVASCRIPT_KEY = 'P1QQeKmJlFhHYV9Bqw3lm1QqEn7QWy6OmFCwoWCU';
+
+Parse.initialize(PARSE_APP_ID, PARSE_JAVASCRIPT_KEY); 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
@@ -95,3 +100,4 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
+

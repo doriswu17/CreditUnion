@@ -1,28 +1,123 @@
-<ion-view view-title="Dashboard">
+<ion-view view-title="Credit Union">
   <ion-content class="padding">
-    <div class="list card">
-      <div class="item item-divider">Recent Updates</div>
-      <div class="item item-body">
-        <div>
-          Hi <b>{{name}}</b>
-        </div>
+    <div class="container" >            
+          <!-- </div>          -->
+          <form class="form col-md-12 center-block">
+
+            <div class="form-group" >
+              <p>User Name:</p>
+            </div>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="User Name" ng-model="userInfo.username">
+            </div>
+
+            <div class="form-group" >
+            <p>First Name:</p>
+            </div>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="First Name" ng-model="userInfo.firstname">
+            </div>
+            <p>Last Name:</p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Last Name" ng-model="userInfo.lastname">
+            </div>
+            <!-- <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Middle Name" ng-model="userInfo.middlename">
+            </div> -->
+           <p> Mother's Maiden Name: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Mother's Maiden Name" ng-model="userInfo.mothername">
+            </div>
+
+            <p>Email: </p>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Email" ng-model="userInfo.email">
+            </div>
+            <p>Password: </p>
+            <div class="form-group">
+              <input type="password" class="form-control input-lg" placeholder="Password" ng-model="userInfo.password">
+            </div>
+            <p>SSN: </p>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="SSN" pattern="\d{3}-?\d{2}-?\d{4}" ng-model="userInfo.SSN">
+            </div>
+            <p>Date of Birth: </p>
+            <div class="form-group">
+              <input type="date" class="form-control input-lg" placeholder="Date of Birth" ng-model="userInfo.dateofbirth">
+            </div>
+            
+            <p>Driver's License Number: </p>
+            <div class="form-group">
+              <input type="text" class="form-control input-lg" placeholder="Driver's License Number" ng-model="userInfo.driver">
+            </div>
+            <p>Issuing State: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="State" ng-model="userInfo.state">
+            </div>
+            <p>Gender: </p>
+            <div class="form-group" >
+              <select name="singleSelect" ng-model="userInfo.gender">
+                <option value="femal">female</option>
+                <option value="male">male</option>
+                <option value="other">other</option>
+              </select><br>
+            </div>
+            <p>Occupation: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Occupation" ng-model="userInfo.occ">
+            </div>
+            <p>Membership Affiliation: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Membership" ng-model="userInfo.membership">
+            </div>
+            <p>Permanent Address: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="address" ng-model="userInfo.address">
+            </div>
+            <p>Home Phone Number: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="homephone" ng-model="userInfo.homephone">
+            </div>
+            <p>Mobile Phone Number: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="mobilephone" ng-model="userInfo.mobilephone">
+            </div>
+            <p>Joint Account Holder Information</p>
+            <p>First Name: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="First Name" ng-model="userInfo.jfirstname">
+            </div>
+            <p>Middle Name: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Middle Name" ng-model="userInfo.jmiddlename">
+            </div>
+            <p>Last Name: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Last Name" ng-model="userInfo.jlastname">
+            </div>
+            <p>Joint Account Holder Permanent Address</p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="address" ng-model="userInfo.jaddress">
+            </div>
+            <p>Home Phone Number: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Home Phone" ng-model="userInfo.jhomephone">
+            </div>
+            <p>Mobile Phone Number: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Mobile Phone" ng-model="userInfo.jmobilephone">
+            </div>
+            <p>Email: </p>
+            <div class="form-group" >
+              <input type="text" class="form-control input-lg" placeholder="Mobile Phone" ng-model="userInfo.jemail">
+            </div>
+            <div class="form-group">
+              <div class="button-bar">
+             <button class="button button-energized" ng-click="createUser(userInfo.firstname,userInfo.lastname,userInfo.mothername,userInfo.username,userInfo.password,userInfo.email,userInfo.state,userInfo.gender,userInfo.occ,userInfo.address,userInfo.SSN,userInfo.driver,userInfo.jfirstname, userInfo.jmiddlename, userInfo.jlastname, userInfo.jaddress, userInfo.jhomephone, userInfo.jmobilephone, userInfo.jemail)">Sign Up</button>
+           </div>
+            </div>
+
+          </form>
       </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Health</div>
-      <div class="item item-body">
-        <div>
-          You ate an apple today!
-        </div>
-      </div>
-    </div>
-    <div class="list card">
-      <div class="item item-divider">Upcoming</div>
-      <div class="item item-body">
-        <div>
-          You have <b>29</b> meetings on your calendar tomorrow.
-        </div>
-      </div>
-    </div>
   </ion-content>
 </ion-view>
