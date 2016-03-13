@@ -1,4 +1,4 @@
-Set up in terminal
+Set up in terminal:
 
 cd /path/to/your/workspace
 
@@ -11,3 +11,5 @@ cd HybridAppDev/DemoIonicApp
 npm install
 
 bower install
+
+ionic serve --lab
