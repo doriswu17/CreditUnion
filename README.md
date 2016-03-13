@@ -13,3 +13,6 @@ npm install
 bower install
 
 ionic serve --lab
+
+
+I used a web based database to store the data from the user. (www.parse.com) 
